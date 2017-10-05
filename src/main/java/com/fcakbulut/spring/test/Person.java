@@ -18,10 +18,17 @@ public class Person {
 		this.setName(name);
 	}
 
+	public void onCreate() {
+		System.out.println("Person created:" + this);
+	}
+
+	public void onDestroy() {
+		System.out.println("Person destroyed:" + this);
+	}
+
 	public void speak() {
 		System.out.println("Hello! I'm a person.");
 	}
-
 
 	@Override
 	public String toString() {

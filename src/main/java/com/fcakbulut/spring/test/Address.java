@@ -4,6 +4,10 @@ public class Address {
 	private String street;
 	private int doorNumber;
 
+	public void init() {
+		System.out.println("Bean created:" + this);
+	}
+	
 	public String getStreet() {
 		return street;
 	}
