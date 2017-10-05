@@ -18,6 +18,12 @@ public class Person {
 		this.setName(name);
 	}
 
+	public static Person getInstance(int id, String name) {
+
+		System.out.println("Creating person using factory method...");
+		return new Person(id, name);
+	}
+
 	public void onCreate() {
 		System.out.println("Person created:" + this);
 	}
