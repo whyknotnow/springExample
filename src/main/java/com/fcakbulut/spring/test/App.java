@@ -7,13 +7,19 @@ public class App {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/fcakbulut/spring/test/beans/beans.xml");
-		
-		Person person = (Person)context.getBean("person");
-		person.speak();
-		
-		System.out.println(person.toString());
-		
-		((ClassPathXmlApplicationContext)context).close();
+
+		Person person1 = (Person) context.getBean("person");
+		Person person2 = (Person) context.getBean("person");
+
+		person1.setTaxId(666);
+
+		person1.speak();
+		person2.speak();
+
+		System.out.println(person1.toString());
+		System.out.println(person2.toString());
+
+		((ClassPathXmlApplicationContext) context).close();
 	}
 
 }
