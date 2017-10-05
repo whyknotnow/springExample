@@ -9,8 +9,17 @@
 		init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
 		<constructor-arg value="mary" name="name" type="String"></constructor-arg>
-		<property name="taxId">
-			<value>123</value>
+		<property value="321" name="taxId">
+		</property>
+		<property name="address" ref="address"></property>
+	</bean>
+
+	<bean id="person2" class="com.fcakbulut.spring.test.Person" scope="singleton"
+		init-method="onCreate" destroy-method="onDestroy" factory-method="createPerson"
+		factory-bean="personFactory">
+		<constructor-arg value="654" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Mike" name="name" type="String"></constructor-arg>
+		<property value="321" name="taxId">
 		</property>
 		<property name="address" ref="address"></property>
 	</bean>
@@ -22,5 +31,8 @@
 		<property name="street">
 			<value>RedLightDistrict</value>
 		</property>
+	</bean>
+
+	<bean id="personFactory" class="com.fcakbulut.spring.test.PersonFactory">
 	</bean>
 </beans>
