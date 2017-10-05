@@ -13,6 +13,9 @@ public class App {
 		person1.speak();
 		System.out.println(person1.toString());
 
+		FruitBasket fruitBasket = (FruitBasket) context.getBean("fruitBasket");
+		System.out.println(fruitBasket.toString());
+
 		((ClassPathXmlApplicationContext) context).close();
 	}
 

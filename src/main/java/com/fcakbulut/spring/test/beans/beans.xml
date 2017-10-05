@@ -29,6 +29,15 @@
 		p:doorNumber="31" p:street="Red Light">
 	</bean>
 
+	<bean id="fruitBasket" class="com.fcakbulut.spring.test.FruitBasket">
+		<constructor-arg name="fruits">
+			<list>
+				<value>apple</value>
+				<value>blueberry</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
 	<bean id="personFactory" class="com.fcakbulut.spring.test.PersonFactory">
 	</bean>
 </beans>
