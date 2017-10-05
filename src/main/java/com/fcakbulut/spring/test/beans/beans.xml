@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="init" default-destroy-method="destroy">
+	default-init-method="init" default-destroy-method="destroy"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
 	<bean id="person" class="com.fcakbulut.spring.test.Person" scope="singleton"
@@ -24,13 +25,8 @@
 		<property name="address" ref="address"></property>
 	</bean>
 
-	<bean id="address" class="com.fcakbulut.spring.test.Address">
-		<property name="doorNumber">
-			<value>3</value>
-		</property>
-		<property name="street">
-			<value>RedLightDistrict</value>
-		</property>
+	<bean id="address" class="com.fcakbulut.spring.test.Address"
+		p:doorNumber="31" p:street="Red Light">
 	</bean>
 
 	<bean id="personFactory" class="com.fcakbulut.spring.test.PersonFactory">
