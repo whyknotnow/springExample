@@ -1,11 +1,23 @@
 package com.fcakbulut.spring.test;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Jungle {
 	private List<Animal> animals;
 
 	private Animal theKingOne;
+
+	private Map<String, String> foods;
+
+	public Map<String, String> getFoods() {
+		return foods;
+	}
+
+	public void setFoods(Map<String, String> foods) {
+		this.foods = foods;
+	}
 
 	public Animal getTheKingOne() {
 		return theKingOne;
@@ -41,8 +53,13 @@ public class Jungle {
 
 		str += theKingOne;
 
-		str += "]";
+		str += "[Foods=";
 
+		for (Entry<String, String> food : foods.entrySet()) {
+			str += food.getValue() + "-" + food.getKey() + "\n";
+		}
+
+		str += "]";
 		return str;
 	}
 

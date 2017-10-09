@@ -56,6 +56,13 @@
 				<value>cat</value>
 			</list>
 		</constructor-arg>
+
+		<property name="foods">
+			<props>
+				<prop key="gorilla">banana</prop>
+				<prop key="dog">bone</prop>
+			</props>
+		</property>
 	</bean>
 
 	<bean id="animal" class="com.fcakbulut.spring.test.Animal">
