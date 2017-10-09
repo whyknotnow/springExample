@@ -8,13 +8,17 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/fcakbulut/spring/test/beans/beans.xml");
 
-		Person person1 = (Person) context.getBean("person");
+		// Person person1 = (Person) context.getBean("person");
+		//
+		// person1.speak();
+		// System.out.println(person1.toString());
+		//
+		// FruitBasket fruitBasket = (FruitBasket) context.getBean("fruitBasket");
+		// System.out.println(fruitBasket.toString());
 
-		person1.speak();
-		System.out.println(person1.toString());
+		Jungle jungle = (Jungle) context.getBean("jungle");
 
-		FruitBasket fruitBasket = (FruitBasket) context.getBean("fruitBasket");
-		System.out.println(fruitBasket.toString());
+		System.out.println(jungle);
 
 		((ClassPathXmlApplicationContext) context).close();
 	}
