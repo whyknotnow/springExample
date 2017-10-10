@@ -1,4 +1,4 @@
-package com.fcakbulut.spring.test;
+package com.fcakbulut.spring.test.human;
 
 public class Address {
 	private String street;

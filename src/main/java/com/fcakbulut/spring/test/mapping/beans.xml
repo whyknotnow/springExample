@@ -6,7 +6,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="person" class="com.fcakbulut.spring.test.Person" scope="singleton"
+	<import resource="writerBeans.xml" />
+
+	<bean id="contextFactory" class="com.fcakbulut.spring.test.mapping.ContextFactory"
+		destroy-method="onDestroy">
+	</bean>
+
+	<!-- SPRING BASE TUTORIAL BEANS -->
+
+	<bean id="person" class="com.fcakbulut.spring.test.human.Person" scope="singleton"
 		init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
 		<constructor-arg value="mary" name="name" type="String"></constructor-arg>
@@ -15,7 +23,7 @@
 		<property name="address" ref="address"></property>
 	</bean>
 
-	<bean id="person2" class="com.fcakbulut.spring.test.Person" scope="singleton"
+	<bean id="person2" class="com.fcakbulut.spring.test.human.Person" scope="singleton"
 		init-method="onCreate" destroy-method="onDestroy" factory-method="createPerson"
 		factory-bean="personFactory">
 		<constructor-arg value="654" name="id" type="int"></constructor-arg>
@@ -25,11 +33,11 @@
 		<property name="address" ref="address"></property>
 	</bean>
 
-	<bean id="address" class="com.fcakbulut.spring.test.Address"
+	<bean id="address" class="com.fcakbulut.spring.test.human.Address"
 		p:doorNumber="31" p:street="Red Light">
 	</bean>
 
-	<bean id="fruitBasket" class="com.fcakbulut.spring.test.FruitBasket">
+	<bean id="fruitBasket" class="com.fcakbulut.spring.test.fruitbasket.FruitBasket">
 		<constructor-arg name="fruits">
 			<list>
 				<value>apple</value>
@@ -38,12 +46,12 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="personFactory" class="com.fcakbulut.spring.test.PersonFactory">
+	<bean id="personFactory" class="com.fcakbulut.spring.test.human.PersonFactory">
 	</bean>
 
-	<bean id="jungle" class="com.fcakbulut.spring.test.Jungle">
+	<bean id="jungle" class="com.fcakbulut.spring.test.jungle.Jungle">
 		<property name="theKingOne">
-			<bean class="com.fcakbulut.spring.test.Animal">
+			<bean class="com.fcakbulut.spring.test.jungle.Animal">
 				<property name="animalName">
 					<value>lion</value>
 				</property>
@@ -65,8 +73,14 @@
 		</property>
 	</bean>
 
-	<bean id="animal" class="com.fcakbulut.spring.test.Animal">
+	<bean id="animal" class="com.fcakbulut.spring.test.jungle.Animal">
 
 	</bean>
+
+	<!-- SPRING BASE TUTORIAL BEANS -->
+
+	<!-- SPRING AUTOWIRING BEANS -->
+
+	<!-- SPRING AUTOWIRING BEANS -->
 
 </beans>

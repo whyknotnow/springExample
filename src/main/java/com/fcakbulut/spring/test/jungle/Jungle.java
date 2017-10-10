@@ -1,4 +1,4 @@
-package com.fcakbulut.spring.test;
+package com.fcakbulut.spring.test.jungle;
 
 import java.util.List;
 import java.util.Map;

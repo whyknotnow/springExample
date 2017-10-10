@@ -1,4 +1,4 @@
-package com.fcakbulut.spring.test;
+package com.fcakbulut.spring.test.fruitbasket;
 
 import java.util.List;
 
